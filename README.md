@@ -1,0 +1,2 @@
+# trigram
+Artikel tentang trigram
