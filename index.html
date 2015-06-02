@@ -13,13 +13,13 @@
     <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
 
-    <title>You lose the game by fauzanhilmi</title>
+    <title>You just lost                         The Game by fauzanhilmi</title>
   </head>
 
   <body>
     <header>
       <div class="inner">
-        <h1>You lose the game</h1>
+        <h1>You just lost                         The Game</h1>
         <h2></h2>
         <a href="https://github.com/fauzanhilmi/trigram" class="button"><small>View project on</small> GitHub</a>
       </div>
@@ -35,11 +35,17 @@
 
 <p>Algoritma <em>string searching</em> standar yang sering dipakai pada <em>word finder</em> hanya mampu memberitahu apakah satu <em>string</em> sama atau tidak sama dengan satu <em>string</em> lainnya. Algoritma ini tidak bisa dipakai untuk mengimplementasikan fitur <em>word suggestion</em>. Fitur <em>word suggestion</em> berfungsi untuk memberikan saran <em>string</em> yang benar jika <em>string</em> masukan salah. Fitur ini terdapat pada <em>spell checker</em> di <em>text editor</em> dan pada <em>Did you mean..</em> di Google. Lalu algoritma apakah yang harus dipakai? Jawabannya adalah <em>approximate string search</em> atau biasa disebut <em>fuzzy string search</em>. Algoritma <em>fuzzy search</em> mampu memberikan perbandingan dua <em>string</em> secara probabilistik. Hal ini berbeda dari algoritma <em>search</em> standar yang menghasilkan perbandingan secara eksak.</p>
 
-<p>Terdapat banyak macam algoritma <em>fuzzy string search</em>.  Salah satunya adalah <em>n-gram search</em>. Istilah <em>n-gram</em> disini bermakna <em>sub-string</em> dengan panjang <em>n</em> dari sebuah <em>string</em> tertentu. Namun, <em>n-gram</em> juga dapat diartikan sebagai <em>string</em> dengan panjang <em>n</em> dari sebuah kumpulan <em>string</em> (kalimat) tertentu. <em>n-gram</em> dengan <em>n</em> = 1 disebut unigram, <em>n</em> = 2 disebut digram, dan <em>n</em> = 3 disebut trigram. Untuk <em>n</em> &gt; 3 biasanya cukup disebut angkanya saja seperti <em>4-gram</em>, <em>5-gram</em>, dst. Dari bermacam-macam ukuran <em>n</em>, satu <em>n-gram</em> yang populer adalah trigram. Hal ini dikarenakan menurut beberapa pakar, nilai <em>n</em> = 3 adalah yang paling ideal untuk <em>n-gram</em>. Akibatnya, trigram sering digunakan di beberapa bidang komputer seperti pada <em>Natural Language Processing (NLP)</em> dan analisis frekuensi kriptanalisis.</p>
+<p>Terdapat banyak macam algoritma <em>fuzzy string search</em>.  Salah satunya adalah <em>n-gram search</em>. Istilah <em>n-gram</em> disini bermakna <em>sub-string</em> dengan panjang <em>n</em> dari sebuah <em>string</em> tertentu. Namun, <em>n-gram</em> juga dapat diartikan sebagai <em>string</em> dengan panjang <em>n</em> dari sebuah kumpulan <em>string</em> (kalimat) tertentu. <em>n-gram</em> dengan <em>n</em> = 1 disebut unigram, <em>n</em> = 2 disebut digram, dan <em>n</em> = 3 disebut trigram. Untuk <em>n</em> &gt; 3 biasanya cukup disebut angkanya saja seperti <em>4-gram</em>, <em>5-gram</em>, dst. Dari bermacam-macam ukuran <em>n</em>, satu <em>n-gram</em> yang populer adalah trigram. Hal ini dikarenakan menurut beberapa pakar, nilai <em>n</em> = 3 adalah yang paling ideal. Hal ini mengakibatkan trigram sering digunakan di beberapa bidang komputer seperti pada <em>Natural Language Processing (NLP)</em> dan analisis frekuensi kriptanalisis.</p>
 
 <p>Kembali ke <em>fuzzy string search</em>, kali ini khusus dengan metode trigram. Secara umum, proses <em>searching</em> dibagi menjadi dua tahap, yakni <em>indexing</em> dan <em>searching</em>. Pada tahap <em>indexing</em>, kumpulan <em>string</em> yang menjadi lingkup pencarian dibagi-bagi menjadi trigram-trigram. Setiap trigram menjadi <em>index</em> untuk semua string yang mengandung trigram tersebut. Lalu, proses <em>searching</em> sendiri membagi <em>string</em> yang menjadi <em>query</em> menjadi trigram-trigram juga. Kemudian dicari <em>string</em> dari lingkup pencarian yang paling sering mengandung trigram-trigram tersebut. <em>String</em> itulah yang menjadi hasil <em>word suggestion</em>.</p>
 
-<p>Untuk mempermudah penjelasan, perhatikan contoh berikut.  </p>
+<p>Untuk mempermudah penjelasan, perhatikan contoh berikut. Misalkan terdapat sebuah fitur <em>word suggestion</em> dalam sebuah <em>spell checker</em> berbasis bahasa Inggris . Hal ini berarti lingkup pencarian fitur tersebut adalah seluruh kata (<em>string</em>) yang terdapat pada kamus bahasa Inggris. Kemudian, dilakukanlah proses <em>indexing</em> untuk seluruh kata. Contohnya adalah kata <em>elephant</em> berikut.</p>
+
+<p>(<strong>pic</strong>)</p>
+
+<p>Dapat dilihat bahwa setiap trigram yang muncul pada <em>elephant</em> menjadi index untuk kata-kata lainnya yang mengandung trigram itu juga. Sekarang, misal dilakukan <em>query</em> kata <em>elephang</em>. Algoritma akan memecah <em>elephang</em> menjadi trigram-trigramnya (<em>ele</em>, <em>lep</em>, <em>eph</em>, <em>pha</em>, <em>han</em>, dan <em>ang</em>). Ternyata, kata <em>elephant</em> paling sering muncul dalam <em>list of words</em> dari trigram-trigram tersebut. Maka, diputuskanlah bahwa <em>elephant</em> adalah <em>word suggestion</em> yang diberikan. </p>
+
+<p>Demikianlah artikel singkat mengenai <em>fuzzy string search</em> dengan metode trigram ini. Semoga artikel ini dapat bermanfaat bagi kita semua.</p>
         </section>
 
         <aside id="sidebar">
