@@ -41,7 +41,8 @@
 
 <p>Untuk mempermudah penjelasan, perhatikan contoh berikut. Misalkan terdapat sebuah fitur <em>word suggestion</em> dalam sebuah <em>spell checker</em> berbasis bahasa Inggris . Hal ini berarti lingkup pencarian fitur tersebut adalah seluruh kata (<em>string</em>) yang terdapat pada kamus bahasa Inggris. Kemudian, dilakukanlah proses <em>indexing</em> untuk seluruh kata. Contohnya adalah kata <em>elephant</em> berikut.</p>
 
-<p>(<strong>pic</strong>)</p>
+<p>(<strong>pic</strong>)
+<img src="http://hsto.org/storage2/239/d06/6bf/239d066bfe2638abf06762b91b069644.png" alt="cannot load picture"></p>
 
 <p>Dapat dilihat bahwa setiap trigram yang muncul pada <em>elephant</em> menjadi index untuk kata-kata lainnya yang mengandung trigram itu juga. Sekarang, misal dilakukan <em>query</em> kata <em>elephang</em>. Algoritma akan memecah <em>elephang</em> menjadi trigram-trigramnya (<em>ele</em>, <em>lep</em>, <em>eph</em>, <em>pha</em>, <em>han</em>, dan <em>ang</em>). Ternyata, kata <em>elephant</em> paling sering muncul dalam <em>list of words</em> dari trigram-trigram tersebut. Maka, diputuskanlah bahwa <em>elephant</em> adalah <em>word suggestion</em> yang diberikan. </p>
 
